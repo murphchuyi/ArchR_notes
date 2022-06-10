@@ -202,6 +202,7 @@
     }else{
       vals <- colData[[names(colorMap)[x]]][!is.na(colData[[names(colorMap)[x]]])]
       s <-  seq(min(vals), max(vals), length.out = length(colorMap[[x]]))
+      ## colorRamp2: interpolate 补充过渡色
       colorx <- circlize::colorRamp2(s, colorMap[[x]])
     }
     if(any(is.na(names(colorx)))){
